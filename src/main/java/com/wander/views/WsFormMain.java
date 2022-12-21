@@ -146,13 +146,13 @@ public class WsFormMain extends javax.swing.JFrame {
 
         tblLista1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Id", "Nome"
+                "Id", "Nome", "Preço de venda"
             }
         ));
         jScrollPane1.setViewportView(tblLista1);
@@ -160,6 +160,9 @@ public class WsFormMain extends javax.swing.JFrame {
             tblLista1.getColumnModel().getColumn(0).setMinWidth(50);
             tblLista1.getColumnModel().getColumn(0).setPreferredWidth(50);
             tblLista1.getColumnModel().getColumn(0).setMaxWidth(50);
+            tblLista1.getColumnModel().getColumn(2).setMinWidth(100);
+            tblLista1.getColumnModel().getColumn(2).setPreferredWidth(100);
+            tblLista1.getColumnModel().getColumn(2).setMaxWidth(100);
         }
 
         tblLista2.setModel(new javax.swing.table.DefaultTableModel(
@@ -333,7 +336,9 @@ public class WsFormMain extends javax.swing.JFrame {
                  
                 if ( l.get(1).equals(m.get(1))){              
                     tdm3.addRow(new Object[]{
-                       l.get(0), l.get(1).toString().toUpperCase()
+                       l.get(0), 
+                       l.get(1).toString().toUpperCase(), 
+                       l.get(2).toString()
                     });
                 }
             });
