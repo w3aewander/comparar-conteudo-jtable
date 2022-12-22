@@ -146,24 +146,13 @@ public class WsFormMain extends javax.swing.JFrame {
 
         tblLista1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-<<<<<<< Upstream, based on origin/master
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-=======
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
->>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
             },
             new String [] {
-<<<<<<< Upstream, based on origin/master
-                "Id", "Nome", "Preço de venda"
-=======
                 "Id", "Nome", "Preço de Custo", "Preço de venda"
->>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
             }
         ));
         jScrollPane1.setViewportView(tblLista1);
@@ -174,12 +163,11 @@ public class WsFormMain extends javax.swing.JFrame {
             tblLista1.getColumnModel().getColumn(2).setMinWidth(100);
             tblLista1.getColumnModel().getColumn(2).setPreferredWidth(100);
             tblLista1.getColumnModel().getColumn(2).setMaxWidth(100);
-<<<<<<< Upstream, based on origin/master
-=======
+
             tblLista1.getColumnModel().getColumn(3).setMinWidth(100);
             tblLista1.getColumnModel().getColumn(3).setPreferredWidth(100);
             tblLista1.getColumnModel().getColumn(3).setMaxWidth(100);
->>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
+
         }
 
         tblLista2.setModel(new javax.swing.table.DefaultTableModel(
@@ -381,11 +369,6 @@ public class WsFormMain extends javax.swing.JFrame {
 
                 if (l.get(1).equals(m.get(1))) {
                     tdm3.addRow(new Object[]{
-
-                       l.get(0), 
-                       l.get(1).toString().toUpperCase(), 
-                       l.get(2).toString()
-
                         l.get(0),
                         l.get(1).toString().toUpperCase(),
                         l.get(2).toString(),
