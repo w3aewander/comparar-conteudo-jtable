@@ -1,13 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Aplicação para demonstrar o uso de integração entre componentes e TableModel jtables
+ * @author Wanderlei Silva do Carmo <wander.silva@gmail.com>
  */
 package com.wander.views;
 
 import com.wander.controllers.ProdutoController;
 import com.wander.entities.Produto;
 import java.util.ArrayList;
-import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,13 +19,13 @@ import javax.swing.table.DefaultTableModel;
 public class WsFormMain extends javax.swing.JFrame {
 
     private final ProdutoController controller;
-            
+
     /**
      * Creates new form WsFormMain
      */
     public WsFormMain() {
         controller = new ProdutoController();
-      
+
         initComponents();
     }
 
@@ -51,6 +53,7 @@ public class WsFormMain extends javax.swing.JFrame {
         tblLista2 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblLista3 = new javax.swing.JTable();
+        btnRemoverItemLista2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -100,7 +103,7 @@ public class WsFormMain extends javax.swing.JFrame {
                 .addComponent(btnCarregarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tblComparar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
                 .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -137,22 +140,30 @@ public class WsFormMain extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblMensagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(lblMensagem, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         tblLista1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+<<<<<<< Upstream, based on origin/master
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null}
+=======
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+>>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
             },
             new String [] {
+<<<<<<< Upstream, based on origin/master
                 "Id", "Nome", "Preço de venda"
+=======
+                "Id", "Nome", "Preço de Custo", "Preço de venda"
+>>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
             }
         ));
         jScrollPane1.setViewportView(tblLista1);
@@ -163,6 +174,12 @@ public class WsFormMain extends javax.swing.JFrame {
             tblLista1.getColumnModel().getColumn(2).setMinWidth(100);
             tblLista1.getColumnModel().getColumn(2).setPreferredWidth(100);
             tblLista1.getColumnModel().getColumn(2).setMaxWidth(100);
+<<<<<<< Upstream, based on origin/master
+=======
+            tblLista1.getColumnModel().getColumn(3).setMinWidth(100);
+            tblLista1.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblLista1.getColumnModel().getColumn(3).setMaxWidth(100);
+>>>>>>> edfecf0 Acrescentado melhorias na apresentação dos dados nos jTables
         }
 
         tblLista2.setModel(new javax.swing.table.DefaultTableModel(
@@ -209,34 +226,46 @@ public class WsFormMain extends javax.swing.JFrame {
             tblLista3.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
+        btnRemoverItemLista2.setText("Remover selecionado");
+        btnRemoverItemLista2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverItemLista2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnRemoverItemLista2)
+                                .addGap(0, 233, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRemoverItemLista2))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,16 +275,16 @@ public class WsFormMain extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -264,7 +293,7 @@ public class WsFormMain extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         carregarProdutos();
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     private void btnCarregarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarProdutosActionPerformed
@@ -288,90 +317,129 @@ public class WsFormMain extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnFecharActionPerformed
 
+    private void btnRemoverItemLista2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemLista2ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) tblLista2.getModel();
+
+        int indexSelectedRow = tblLista2.getSelectedRow();
+
+        if (indexSelectedRow != -1) {
+            System.out.println(String.valueOf(indexSelectedRow));
+            dtm.removeRow(indexSelectedRow);
+            showMessage("Item removido da lista2 com sucesso.");
+        } else {
+            showMessage("Selecione um item primeiro.");
+            //Soar um beep como alerta...
+            java.awt.Toolkit.getDefaultToolkit().beep();
+            
+        }
+    }//GEN-LAST:event_btnRemoverItemLista2ActionPerformed
+
+    public void showMessage(String msg) {
+
+        Runnable showMessage = () -> {
+            try {
+                lblMensagem.setText(msg);
+                Thread.sleep(1000);
+                lblMensagem.setText("...");
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(WsFormMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        };
+
+        Thread sm = new Thread(showMessage);
+        sm.start();
+
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WsFormMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new WsFormMain().setVisible(true);
             }
         });
     }
-    
-   
-    public void compararListas(){
-         
+
+    public void compararListas() {
+
         DefaultTableModel tdm = (DefaultTableModel) tblLista1.getModel();
-        
+
         DefaultTableModel tdm2 = (DefaultTableModel) tblLista2.getModel();
-        
+
         DefaultTableModel tdm3 = (DefaultTableModel) tblLista3.getModel();
-        
+
         tdm3.setRowCount(0);
-        
-        tdm.getDataVector().forEach( l -> {
-            
-            tdm2.getDataVector().forEach( m -> {
-                 
-                if ( l.get(1).equals(m.get(1))){              
+
+        tdm.getDataVector().forEach(l -> {
+
+            tdm2.getDataVector().forEach(m -> {
+
+                if (l.get(1).equals(m.get(1))) {
                     tdm3.addRow(new Object[]{
+
                        l.get(0), 
                        l.get(1).toString().toUpperCase(), 
                        l.get(2).toString()
+
+                        l.get(0),
+                        l.get(1).toString().toUpperCase(),
+                        l.get(2).toString(),
+                        l.get(3).toString()
+
                     });
                 }
             });
         });
     }
-    
-    public void carregarProdutos(){
-        
+
+    public void carregarProdutos() {
+
         DefaultTableModel tdm = (DefaultTableModel) tblLista1.getModel();
         tdm.setNumRows(0);
-        
+
         ArrayList<Produto> produtos = controller.carregarProdutos();
-   
-        produtos.forEach( p -> {
-        
-            String[] objRow = { String.valueOf(p.getId()), 
-                                                 p.getDescricao(), 
-                                                 String.valueOf(p.getPrecoCusto()),
-                                                 String.valueOf(p.getPrecoVenda()),
-                                                 String.valueOf(p.getQtdeEstoque())
-            }; 
-            
+
+        produtos.forEach(p -> {
+
+            String[] objRow = {String.valueOf(p.getId()),
+                p.getDescricao(),
+                String.format("%8.2f", p.getPrecoCusto()),
+                String.format("%8.2f", p.getPrecoVenda()),
+                String.valueOf(p.getQtdeEstoque())
+            };
+
             tdm.addRow(objRow);
-        
+
         });
-           
-        
+
+        //Somente para alinhar a direita a terceira coluna 
+        AlinharDireita tmr = new AlinharDireita();
+        tblLista1.getColumnModel().getColumn(0).setCellRenderer(tmr);
+        tblLista1.getColumnModel().getColumn(2).setCellRenderer(tmr);
+        tblLista1.getColumnModel().getColumn(3).setCellRenderer(tmr);
+        tblLista3.getColumnModel().getColumn(2).setCellRenderer(tmr);
+        tblLista3.getColumnModel().getColumn(3).setCellRenderer(tmr);
+        //tblLista2.getColumnModel().getColumn(2).setCellRenderer(tmr);
     }
-    
+
+    //Classe interna para alinhar a celular de uma coluna do jTable
+    class AlinharDireita extends DefaultTableCellRenderer {
+
+        public AlinharDireita() {
+            setHorizontalAlignment(RIGHT); // ou LEFT, RIGHT, etc
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCarregarProdutos;
     private javax.swing.JButton btnFechar;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnRemoverItemLista2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
