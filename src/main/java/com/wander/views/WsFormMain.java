@@ -320,6 +320,7 @@ public class WsFormMain extends javax.swing.JFrame {
             //Soar um beep como alerta...
             java.awt.Toolkit.getDefaultToolkit().beep();
             
+            
         }
     }//GEN-LAST:event_btnRemoverItemLista2ActionPerformed
 
